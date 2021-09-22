@@ -42,6 +42,8 @@
                                 @csrf
                                 <button type="submit" class="text-yellow-500">Unlike</button>
                             </form>
+
+                            <span></span>
                         </div>
                     </div>
                 @endforeach
