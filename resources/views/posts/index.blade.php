@@ -34,7 +34,7 @@
                         <p class="mb-2">{{ $post->body }}</p>
 
                         <div class="flex items-center">
-                            <form action="" method="POST" class="mr-1">
+                            <form action="{{ route('posts.likes', $post->id) }}" method="POST" class="mr-1">
                                 @csrf
                                 <button type="submit" class="text-blue-500">Like</button>
                             </form>
@@ -43,7 +43,7 @@
                                 <button type="submit" class="text-yellow-500">Unlike</button>
                             </form>
 
-                            <span></span>
+                            <span>{{ $post->likes->count() }} {{ Str::plural(('like'), $post->likes->count()) }}</span>
                         </div>
                     </div>
                 @endforeach
